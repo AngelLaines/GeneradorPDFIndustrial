@@ -1,21 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Horario Aulas - Iniciar Sesión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="build/css/app.css">
 </head>
-<body>
-    <header>
-        <nav>
 
-        </nav>
+<body>
+
+    <header class="header ">
+        <div class="header__container contenedor">
+            <div class="header__logo">
+                <img src="build/img/logo2_unison.gif" alt="imagen unison" class="header__imagen">
+            </div>
+            <div class="header__contenido">
+                <h1 class="header__heading">Horario de Aulas</h1>
+
+                <p class="header__texto">Departamento de Ingeniería Industrial</>
+            </div>
+
+
+        </div>
+
+
     </header>
-    <main>
-        
+    <main class="auth ">
+
+        <h1 class="auth__heading">Iniciar Sesión</h1>
+        <p class="auth__descripcion">Inicia sesión para ingresar al horario de las aulas del Departamento de Ingenieria
+            Industrial</p>
+
+
+        <div class="formulario__campo">
+            <label for="user" class="formulario__label">Usuario:</label>
+
+            <input type="text" class="formulario__input" id="user" placeholder="Tu usuario" name="user">
+        </div>
+        <div class="formulario__campo">
+            <label for="password" class="formulario__label">Contraseña:</label>
+
+            <input type="password" class="formulario__input" id="password" placeholder="Tu contraseña" name="password">
+        </div>
+
+        <input type="button" class="formulario__submit" value="Iniciar Sesión" id="login">
+
+
     </main>
-    <footer>
+
+    <footer class="footer">
+        <div class="footer__container contenedor">
+            <div class="footer__info">
+                <p class="footer__texto">Departamento de Ingeniería Industrial | Universidad de Sonora</p>
+                <p class="footer__texto">Blvd. Luis Encinas y Rosales S/N, Col. Centro, Hermosillo, Sonora, México.
+                    (662)
+                    259-21-00 y 259-22-00</p>
+
+            </div>
+            <div class="footer__imagen">
+                <h3 class="footer__titulo">Desarrollado por:</h3>
+                <img src="build/img/logo_csti.jpeg" alt="logo csti" class="footer__csti">
+                <p class="footer__cstitexto">Centro de Servicios de Tecnologías de la Información</p>
+            </div>
+
+        </div>
 
     </footer>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/login.js"></script>
 </body>
+
 </html>
