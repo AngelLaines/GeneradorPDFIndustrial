@@ -154,6 +154,6 @@ create table if not exists usuario(
     apellido varchar(100) not null
 );
 
-insert into usuario(usuario,contraseña,tipo,nombre,apellido) values('Csti','','Administrador','','');
+insert into usuario(usuario,contraseña,tipo,nombre,apellido) values('Csti','1234','Administrador','','');
 
 -- Dump completed on 2016-10-31 17:22:04
