@@ -1,4 +1,5 @@
 create database if not exists sss_csti;
+use sss_csti;
 -- MySQL dump 10.13  Distrib 5.5.42, for osx10.6 (i386)
 --
 -- Host: localhost    Database: sss-csti
