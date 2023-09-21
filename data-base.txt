@@ -156,4 +156,36 @@ create table if not exists usuario(
 
 insert into usuario(usuario,contraseña,tipo,nombre,apellido) values('Csti','1234','Administrador','','');
 
+drop table if exists tiempo_completo;
+drop table if exists tecnico_academico;
+drop table if exists asignatura;
+create table if not exists tiempo_completo(
+	num_empleado varchar(50) primary key,
+	nombre_maestro varchar(1) not null,
+	plan_actividades varchar(1) not null,
+	informe_actividades varchar(1) not null,
+	concordancia_actividades varchar(1) not null,
+	actividades_reportadas varchar(1) not null,
+	actividades_opcionales varchar(1),
+	actividades_sustentadas varchar(1) not null
+);
+create table if not exists tecnico_academico(
+	num_empleado varchar(50) primary key,
+	nombre_maestro varchar(1) not null,
+	plan_actividades varchar(1) not null,
+	informe_actividades varchar(1) not null,
+	concordancia_actividades varchar(1) not null,
+	actividades_reportadas varchar(1) not null,
+	actividades_opcionales varchar(1),
+	actividades_sustentadas varchar(1) not null
+);
+create table if not exists asignatura(
+	num_empleado varchar(50) primary key,
+	nombre_maestro varchar(1) not null,
+	plan_actividades varchar(1) not null,
+	informe_actividades varchar(1) not null,
+	concordancia_actividades varchar(1) not null,
+	descripcion_desarrollo varchar(1) not null,
+	actividades_extraordinarias  varchar(1)
+);
 -- Dump completed on 2016-10-31 17:22:04
