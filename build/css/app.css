@@ -564,7 +564,7 @@ p {
     font-size: 1.6rem;
     line-height: 1.8
 }
-/* OJO AQUI VA TODO LO DE NAV BAR*/
+/*?OJO AQUI VA TODO LO DE NAV BAR*/
 .dashboard{
     display: flex;
     flex-direction: column;
@@ -645,3 +645,6 @@ p {
 
     
 }
+
+/*? AQUI TERMINA TODO LO DEL SIDEVAR */
+
