@@ -23,40 +23,54 @@
                 <h1 class="header__heading">Generador PDF</h1>
 
                 <p class="header__texto">Departamento de Ingeniería Industrial</>
-            </div>
+                </div>
+                <input type="button" class="formulario__submit-base" value="Cerrar Sesión" id="logout">
+
+
 
 
         </div>
 
 
     </header>
-    <main class="auth ">
 
-        <h1 class="auth__heading">Iniciar Sesión</h1>
-        <p class="auth__descripcion">Inicia sesión para ingresar al horario de las aulas del Departamento de Ingenieria
-            Industrial</p>
+    <div class="dashboard">
 
+        <aside class="menu ">
+            
 
-        <div class="formulario__campo">
-            <label for="user" class="formulario__label">Usuario:</label>
+                
+                    <h2 class="menu__heading">Menu</h2>
+                    
+                
+                <nav class="sidebar-nav">
+                    <a class="nav__link" href="">Leer Archivo CSV</a>
+                    <a class="nav__link" href="">Ver Maestros</a>
+                    <a class="nav__link" href="">Generar PDF</a>
+                </nav>
+            
+            
+            
+        
 
-            <input type="text" class="formulario__input" id="user" placeholder="Tu usuario" name="user">
-        </div>
-        <div class="formulario__campo">
-            <label for="password" class="formulario__label">Contraseña:</label>
+            
+        </aside>
+        <main class="auth ">
+            <h2>Ver Maestros</h2>
+    
+    
+    
+    
+         
+    
+    
+        </main>
+    </div>
 
-            <input type="password" class="formulario__input" id="password" placeholder="Tu contraseña" name="password">
-        </div>
-
-        <input type="button" class="formulario__submit" value="Iniciar Sesión" id="login">
-
-
-    </main>
-
-    <footer class="footer">
+    <footer class="footer-base">
         <div class="footer__container contenedor">
           
-            <div class="footer__imagen">
+            <div class="footer__imagen-base">
                 <h3 class="footer__titulo">Desarrollado por:</h3>
                 <img src="build/img/logo_csti.jpeg" alt="logo csti" class="footer__csti">
                 <p class="footer__cstitexto">Centro de Servicios de Tecnologías de la Información</p>

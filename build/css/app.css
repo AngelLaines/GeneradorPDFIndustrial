@@ -77,6 +77,11 @@
     padding: 3rem 0;
     text-align: center
 }
+.footer-base {
+    background-color: #10069f;
+    
+    text-align: center
+}
 
 .footer__container--index {
     -webkit-box-pack: justify;
@@ -137,6 +142,9 @@
     border-left: none;
     padding: 5rem
 }
+.footer__imagen-base{
+    padding: 2rem;
+}
 
 @media (min-width:768px) {
     .footer__imagen {
@@ -161,7 +169,9 @@
 
 .auth {
     margin: 25rem auto;
-    width: min(95%, 60rem)
+    width: min(95%, 60rem);
+    background-color: aqua;
+    
 }
 
 @media (min-width:768px) {
@@ -237,14 +247,40 @@
     -moz-transition-property: background-color;
     transition-property: background-color
 }
+.formulario__submit-base {
+    background-color: #10069f;
+    border: none;
+    color: #daaa00;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 400;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding: 1.5rem 4rem;
+    text-align: center;
+    -webkit-transition-duration: .3s;
+    -moz-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transition-property: background-color;
+    -o-transition-property: background-color;
+    -moz-transition-property: background-color;
+    transition-property: background-color
+}
 
 @media (min-width:768px) {
     .formulario__submit {
         width: auto
     }
+    .formulario__submit-base {
+        margin-bottom: 0;
+    }
 }
 
 .formulario__submit:hover {
+    background-color: #0b046e
+}
+.formulario__submit-base:hover {
     background-color: #0b046e
 }
 
@@ -254,6 +290,13 @@
         -webkit-align-self: flex-start;
         align-self: flex-start;
         width: auto
+    }
+    .formulario__submit-base {
+        -ms-flex-item-align: start;
+        -webkit-align-self: flex-start;
+        align-self: center;
+        width: auto;
+        cursor: pointer;
     }
 }
 
@@ -521,5 +564,71 @@ p {
     font-size: 1.6rem;
     line-height: 1.8
 }
+/* OJO AQUI VA TODO LO DE NAV BAR*/
+.dashboard{
+    display: flex;
+    flex-direction: column;
+    
+}
+@media (min-width: 768px) {
+    .dashboard{
+        display: flex;
+        flex-direction: row;
 
-/*# sourceMappingURL=app.css.map */
+    }
+}
+.menu{
+    background-color: #e4002b;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .menu{
+        flex-direction: column;
+        padding: 2rem 2rem 0rem 2rem;
+        justify-content: space-evenly;
+        
+    }
+}
+.menu__heading{
+    text-align: center;
+    color: white;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.sidebar-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .sidebar-nav{
+
+        flex-direction: column;
+
+    }
+}
+
+.nav__link{
+    color: white;
+    text-align: center;
+    padding: 1.5rem 2rem;
+
+
+}
+
+.nav__link:hover{
+    background-color: #daaa00;
+    color:#0b046e;
+    transform: scale(1.2) 3s ease;
+    cursor: pointer;
+
+    
+}
