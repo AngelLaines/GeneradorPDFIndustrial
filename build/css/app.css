@@ -595,6 +595,18 @@ p {
 .menu__heading{
     text-align: center;
     color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    
+    .menu__heading{
+        text-align: center;
+        color: white;
+        font-size: 4rem;
+        font-weight: bold;
+    }
 }
 
 .text-center{
@@ -620,6 +632,7 @@ p {
     color: white;
     text-align: center;
     padding: 1.5rem 2rem;
+    font-size: 1.8rem;
 
 
 }
