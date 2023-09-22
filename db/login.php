@@ -8,12 +8,12 @@
     $sql = "select * from usuario where usuario = binary'" . $user . "' and contraseña = binary'".$pass."'";
     
     $res = $conn->query($sql);
-    $rows = mysqli_fetch_array($res);
+    $rows = mysqli_fetch_row($res);
     if ($rows===null){
         echo "Usuario y/o contraseña incorrectos";
     } else {
-        $_SESSION['user']=$rows[4].' '.$rows[5];
+        $_SESSION['name']=$rows[4].' '.$rows[5];
         $_SESSION['type'] = $rows[3];
-        echo $_SESSION['user'];
+        echo $_SESSION['name'];
     }
 ?>
