@@ -564,6 +564,27 @@ p {
     font-size: 1.6rem;
     line-height: 1.8
 }
+
+
+
+/*?===================== AQUI EMPIEZA TODO*/
+/*? CLASES GLOBALES*/
+.btn__pdf{
+    padding: 1.5rem 3rem;
+    background-color:#F40F02;
+    color: #fff;
+    border-radius: 1rem;
+
+}
+ .btn__pdf:hover{
+    cursor: pointer;
+    background-color: #ff756d74;
+    color: #F40F02;
+  
+
+}
+
+/*?TERMINA CLASES GLOBALES*/
 /*?OJO AQUI VA TODO LO DE NAV BAR*/
 .dashboard{
     display: flex;
@@ -618,11 +639,12 @@ p {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    margin-bottom: 0rem;
 }
 
 @media (min-width: 768px) {
     .sidebar-nav{
-
+        margin-bottom: 4rem;
         flex-direction: column;
 
     }
@@ -633,6 +655,8 @@ p {
     text-align: center;
     padding: 1.5rem 2rem;
     font-size: 1.8rem;
+    border: 3px solid #daaa00;
+    border-radius: 1rem;
 
 
 }
@@ -657,12 +681,49 @@ p {
     margin-inline: 10rem;
     margin-bottom: 2rem;
  }
- .btn__pdf{
-    padding: 1.5rem 2rem;
-}
+ 
 .td__maestro{
     text-align: center;
+    padding: 1rem;
+}
+.thead__maestro{
+    background-color: #daaa00;
+    color: #10069f;
+}
+.thead__maestro th{
+    padding: 1rem 2rem;
+    border-radius: 1px;
+}
+
+.thead__maestro tr{
+    font-size: 2rem;
 }
 
 
-/*?=================TERMINA VER_MAESTRO===*/
+/*?=================ESTILOS TERMINA VER_MAESTRO===*/
+
+
+
+
+
+/*=================TERMINA  VER_MAESTRO===*/
+
+
+/*?================ ESTILOS Pagina GENERAR PDF================*/
+
+
+
+/*================TERMINA ESTILOS PAGINA GENERAR PDF========*/
+
+
+/*?===== ESTILOS de la PAGINA GENERAR PDF por MAESTRO=====*/
+
+
+/*========== TERMINA ESTILOS PARA GENERAR PDF POR MAESTRO*/
+
+
+/*? =========ESTILOS PARA GENERAR PDF DE TODOS LOS PROfES*/
+
+
+
+/*=========ESTILOS PARA GENERAR PDF DE TODOS LOS PROfES*/
