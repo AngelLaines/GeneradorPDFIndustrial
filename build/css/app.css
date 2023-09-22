@@ -170,7 +170,7 @@
 .auth {
     margin: 25rem auto;
     width: min(95%, 60rem);
-    background-color: aqua;
+    
     
 }
 
@@ -648,3 +648,21 @@ p {
 
 /*? AQUI TERMINA TODO LO DEL SIDEVAR */
 
+
+/*?===============PAGINA VER MAESTRO*/
+ .table{
+    margin: 0 auto;
+ }
+ .table__tipo{
+    margin-inline: 10rem;
+    margin-bottom: 2rem;
+ }
+ .btn__pdf{
+    padding: 1.5rem 2rem;
+}
+.td__maestro{
+    text-align: center;
+}
+
+
+/*?=================TERMINA VER_MAESTRO===*/
