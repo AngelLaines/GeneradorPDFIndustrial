@@ -14,7 +14,7 @@
 }
 
 .header__texto {
-    font-size: 2.6rem
+    font-size: 2.0rem
 }
 
 .header__imagen {
@@ -23,9 +23,9 @@
     width: 25rem
 }
 .header__imagen--index {
-    height: 15rem;
-    margin: 5rem 0 2rem;
-    width: 15rem
+    height: 12rem;
+    margin: 2rem 0 2rem;
+    width: 12rem
 }
 
 @media (min-width:768px) {
@@ -156,9 +156,9 @@
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-    height: 15rem;
+    height: 10rem;
     margin: 3rem auto;
-    width: 15rem
+    width: 10rem
 }
 
 .footer__cstitexto {
@@ -539,7 +539,7 @@ h2 {
 }
 
 h1 {
-    font-size: 4.4rem
+    font-size: 3.8rem
 }
 
 h2 {
@@ -598,10 +598,10 @@ p {
     }
 }
 .menu{
-    background-color: #e4002b;
+    background-color: #10069f;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-around;
    
 }
 
@@ -629,9 +629,9 @@ p {
 .sidebar-nav{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 1rem;
-    margin-bottom: 0rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -640,7 +640,7 @@ p {
     color: white;
     text-align: center;
     padding: 1.5rem 2rem;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     border: 3px solid #daaa00;
     border-radius: 1rem;
 
@@ -659,11 +659,18 @@ p {
 /*? AQUI TERMINA TODO LO DEL SIDEVAR */
 
 
-/*?===============PAGINA VER MAESTRO*/
+/*?===============PAGINA VER MAESTRO (BASE)*/
+.scroll__table{
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
  .table{
     margin: 0 auto;
     border: 1px solid #000;
     margin-bottom: 3rem;
+    width:500px;
+    background-color:lightgray;
  }
  .table th{
     position: sticky;
@@ -697,7 +704,7 @@ p {
 }
 
 
-/*?=================ESTILOS TERMINA VER_MAESTRO===*/
+/*?=================ESTILOS TERMINA VER_MAESTRO (BASE)===*/
 
 
 
