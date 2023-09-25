@@ -62,7 +62,7 @@ $(document).ready(function () {
               // Aquí puedes agregar la lógica para generar el PDF
               // Puedes usar la información de la fila actual (jsonDataArray[i])
           });
-          newRow.append($("<td>").append(pdfButton));
+          newRow.append($("<td class='td__maestro'>").append(pdfButton));
 
           // Agregar la fila a la tabla
           $(".table tbody").append(newRow);
