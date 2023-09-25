@@ -45,6 +45,29 @@ $(document).ready(function () {
 
         // El contenido convertido se encuentra en la variable jsonDataArray
         console.log(jsonDataArray);
+
+        for (var i = 0; i < jsonDataArray.length; i++) {
+          var numeroEmpleado = jsonDataArray[i].numero;
+          var nombreAcademico = jsonDataArray[i].nombre;
+
+          // Crear una nueva fila en la tabla
+          var newRow = $("<tr>");
+          newRow.append("<td class='td__maestro'>" + numeroEmpleado + "</td>");
+          newRow.append("<td class='td__maestro'>" + nombreAcademico + "</td>");
+
+          // Crear un botón "Generar PDF" en la columna correspondiente
+          var pdfButton = $("<button>").text("PDF");
+          pdfButton.addClass("btn__pdf"); // Agregar una clase si es necesario
+          pdfButton.on("click", function () {
+              // Aquí puedes agregar la lógica para generar el PDF
+              // Puedes usar la información de la fila actual (jsonDataArray[i])
+          });
+          newRow.append($("<td>").append(pdfButton));
+
+          // Agregar la fila a la tabla
+          $(".table tbody").append(newRow);
+      }
+
       };
 
       // Leer el archivo como texto
