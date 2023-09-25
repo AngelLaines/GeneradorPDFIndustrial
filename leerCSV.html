@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-ES">
 
 <head>
     <meta charset="UTF-8">
@@ -63,25 +63,26 @@
             <table class="table"> 
                 <thead>
                     <select class="table__tipo" name="table__tipo" id="table__tipo">
-                        <option value="completo">Tiempo Completo</option>
+                        <option selected value="completo">Tiempo Completo</option>
                         <option value="academico">Técnico Académico</option>
                         <option value="asignatura">Asignatura</option>
                     </select>
                     <input type="file" name="Archivo" id="archivoCSV" accept=".csv">
                     <button id="readFile" style="display:none">Leer archivo</button>
-                    <tr>
-                        <th>Número de Empleado</th>
+                    <button id="saveData" style="display:none">Guardar</button>
+                    <tr id = "header-table">
+                        <!-- <th>Número de Empleado</th>
                         <th>Nombre del Académico</th>
-                        <th>Generar PDF</th>
+                        <th>Generar PDF</th> -->
                 
                     </tr>
 
                     <tbody>
-                        <tr>
+                        <!-- <tr>
                             <td class="td__maestro">23051</td>
                             <td class="td__maestro">Jorge Rountree Cons</td>
                             <td class="td__maestro"> <button class="btn__pdf"> PDF</button></td>
-                        </tr>
+                        </tr> -->
                     </tbody>
 
                 </thead>
@@ -111,7 +112,8 @@
 
     </footer>
     <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/readFile.js"></script>
+    <script type="module" src="js/common/common.js"></script>
+    <script type="module" src="js/readFile.js"></script>
 </body>
 
 </html>
