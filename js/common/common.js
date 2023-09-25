@@ -6,3 +6,8 @@ export function getType(tipo){
     }
     return typeTeacher[tipo];
 }
+
+export function logout(){
+    $.post("db/logout.php");
+    window.location.href = "./login.html"
+}

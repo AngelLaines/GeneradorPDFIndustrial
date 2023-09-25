@@ -1,4 +1,4 @@
-import { getType } from "./common/common.js";
+import { getType,logout } from "./common/common.js";
 
 $(document).ready(function () {
 
@@ -121,8 +121,11 @@ $(document).ready(function () {
 
   $("#saveData").click(function () {
     let type = getType($("#table__tipo option:selected").text());
-    $.post("db/insert-teachers-data.php",{data:dataArray,type},function(data){
+    $.post("db/insert-teachers-data.php", { data: dataArray, type }, function (data) {
       alert(data);
     });
+  });
+  $("#logout").click(function () {
+    logout();
   });
 });

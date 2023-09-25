@@ -37,5 +37,5 @@ if ($conn->connect_errno) {
     }
 }
 
-echo json_encode($error);
+print_r(json_encode($error)) ;
 ?>
