@@ -744,7 +744,13 @@ button.paginacion:hover{
 
 /*?===== ESTILOS de la PAGINA GENERAR PDF por MAESTRO=====*/
 
+.img__logo{
+    background-image: url('../img/logo_csti.jpeg');
+    background-color: #000;
+    width: 500px;
+    height: 500px;
 
+}
 
 /*========== TERMINA ESTILOS PARA GENERAR PDF POR MAESTRO*/
 
