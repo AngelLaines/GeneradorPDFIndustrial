@@ -705,10 +705,32 @@ p {
 
 
 /*?=================ESTILOS TERMINA VER_MAESTRO (BASE)===*/
-
-
-
-
+div.pag{
+    display: flex;
+    justify-content: center;
+}
+button.paginacion{
+    margin-top:8px;
+    margin-bottom:8px;
+    margin-right:3px;
+    margin-left:3px;
+    padding:5px;
+    color:#fff;
+    background-color:#10069f;
+    border-color:#daaa00;
+    border-radius: 1rem;
+    border-style: solid;
+}
+button.paginacion.activo{
+    background-color:#daaa00;
+    border-color:#10069f;
+    color:#0b046e;
+}
+button.paginacion:hover{
+    background-color:#daaa00;
+    border-color:#daaa00;
+    color:#0b046e;
+}
 
 /*=================TERMINA  VER_MAESTRO===*/
 
@@ -721,6 +743,7 @@ p {
 
 
 /*?===== ESTILOS de la PAGINA GENERAR PDF por MAESTRO=====*/
+
 
 
 /*========== TERMINA ESTILOS PARA GENERAR PDF POR MAESTRO*/

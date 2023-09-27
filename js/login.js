@@ -6,7 +6,7 @@ $(document).ready(()=>{
         $.post('./db/login.php',{user,pass},function(data){
             alert(data);
             if(data!=='Usuario y/o contraseña incorrectos'){
-                window.location.href = 'index.php'
+                window.location.href = 'leerCSV.html'
             }
         });
     });

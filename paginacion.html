@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es-ES">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leer CSV</title>
+    <title>Horario Aulas - Iniciar Sesión</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
             <div class="header__contenido">
                 <h1 class="header__heading">Generador PDF</h1>
 
-                <p class="header__texto">Departamento de Ingeniería Industrial</>
+                <p class="header__texto">Departamento de Ingeniería Industrial</p>
                 </div>
                 <input type="button" class="formulario__submit-base" value="Cerrar Sesión" id="logout">
 
@@ -44,8 +44,8 @@
                     
                 
                 <nav class="sidebar-nav">
-                    <a class="nav__link" href="./leerCSV.html">Leer Archivo CSV</a>
-                    <a class="nav__link" href="./ver-maestros.html">Ver Maestros</a>
+                    <a class="nav__link" href="leerCSV.html">Leer Archivo CSV</a>
+                    <a class="nav__link" href="">Ver Maestros</a>
                     <a class="nav__link" href="">Generar PDF</a>
                 </nav>
             
@@ -55,47 +55,36 @@
 
             
         </aside>
-        <main class="auth contenedor">
+        <main class="auth contenedor ">
 
             
-            <h2 class="text-center profe__heading">Ingrese un archivo CSV</h2>
-
-            <table class="table"> 
-                <thead>
-                    <select class="table__tipo" name="table__tipo" id="table__tipo">
-                        <option selected value="completo">Tiempo Completo</option>
-                        <option value="academico">Técnico Académico</option>
-                        <option value="asignatura">Asignatura</option>
-                    </select>
-                    <input type="file" name="Archivo" id="archivoCSV" accept=".csv">
-                    <button id="readFile" style="display:none">Leer archivo</button>
-                    <button id="saveData" style="display:none">Guardar</button>
-                    <tr id = "header-table">
-                        <!-- <th>Número de Empleado</th>
-                        <th>Nombre del Académico</th>
-                        <th>Generar PDF</th> -->
-                
-                    </tr>
-
+            <h2 class="text-center profe__heading">Ver Maestro</h2>
+            <select class="table__tipo" name="" id="table__tipo">
+                <option value="">Tiempo Completo</option>
+                <option value="">Técnico Académico</option>
+                <option value="">Asignatura</option>
+            </select>
+            <div class="scroll__table">
+                <table class="table"> 
+                    <thead class="thead__maestro">
+                        
+                        <tr>
+                            <th>Número de Empleado</th>
+                            <th>Nombre del Académico</th>
+                            <th>Estado</th>
+                            <th>PDF</th>
+                        </tr>
+                    </thead>
                     <tbody>
-                        <!-- <tr>
-                            <td class="td__maestro">23051</td>
-                            <td class="td__maestro">Jorge Rountree Cons</td>
-                            <td class="td__maestro"> <button class="btn__pdf"> PDF</button></td>
-                        </tr> -->
+                                               
                     </tbody>
-
-                </thead>
-
-            </table>
-            
-    
-    
-    
-    
-         
-    
-    
+                    
+                </table>
+                
+                <div class="pag">
+                    
+                </div>
+            </div>
         </main>
     </div>
 
@@ -112,8 +101,8 @@
 
     </footer>
     <script src="js/jquery-3.7.1.min.js"></script>
-    <script type="module" src="js/common/common.js"></script>
-    <script type="module" src="js/readFile.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/paginacion.js"></script>
 </body>
 
 </html>
