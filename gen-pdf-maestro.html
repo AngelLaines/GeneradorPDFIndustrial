@@ -22,7 +22,7 @@
             <div class="header__contenido">
                 <h1 class="header__heading">Generador PDF</h1>
 
-                <p class="header__texto">Departamento de Ingeniería Industrial</>
+                <p class="header__texto">Departamento de Ingeniería Industrial</p>
             </div>
             <input type="button" class="formulario__submit-base" value="Cerrar Sesión" id="logout">
 
@@ -37,9 +37,6 @@
     <div class="dashboard">
 
         <aside class="menu">
-
-
-
             <h2 class="menu__heading">Menu</h2>
 
 
@@ -53,25 +50,18 @@
         <main class="auth contenedor ">
 
             <h2 class="text-center profe__heading">Ver Maestro</h2>
-            <select class="table__tipo" name="" id="">
-                <option value="">Tiempo Completo</option>
-                <option value="">Técnico Académico</option>
-                <option value="">Asignatura</option>
-            </select>
 
             <form id="numberForm">
-                Id de maestro: <input type="number" name="id profesor" id="id-prof">
-                <div id="result"> resultado de tamales:
-                    <output name="x" for="id-prof"></output>
+                Id de maestro: <input type="text" name="id profesor" id="id-prof">
+                <button type="button" id="buscar">Buscar</button>
+                <div id="result"> 
+                    <p id="r_maestro">Maestro: </p>
+                    
                 </div>
                 <button class="btn__pdf">Generar PDF</button>
             </form>
 
-            <br><br>
-                <h2 class="title-gen-pdf-maestro">generar pdf maestro</h2>
-            <br><br><br>
-
-            <div class="scroll__table">
+            <!-- <div class="scroll__table">
                 <table class="table">
                     <thead class="thead__maestro">
 
@@ -184,14 +174,7 @@
                     </tbody>
 
                 </table>
-            </div>
-
-
-
-
-
-
-
+            </div> -->
 
         </main>
     </div>
@@ -208,9 +191,8 @@
         </div>
 
     </footer>
-    <script src="js/look-id.js"></script>
     <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/login.js"></script>
+    <script src="js/gen-pdf-maestro.js"></script>
 </body>
 
 </html>
