@@ -752,6 +752,14 @@ button.paginacion:hover{
 
 }
 
+.pdf__imagen{
+    width: 120px;
+    height: auto;
+}
+
+.p__space{
+    white-space: normal;
+}
 /*========== TERMINA ESTILOS PARA GENERAR PDF POR MAESTRO*/
 
 

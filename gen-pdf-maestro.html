@@ -62,13 +62,13 @@
                 <button type="button"class="btn__pdf" id="btn-gen-pdf">Generar PDF</button>
             </form>
 
-            <div id="embed-div">
+            <div id="embed-div" width="675px">
                 <div id="content" >
                     <div class="header__logo">
-                        <img src="build/img/logo2_unison.png" alt="imagen unison" class="header__imagen--index">
+                        <img src="build/img/logo2_unison.png" alt="imagen unison" class="pdf__imagen">
                     </div>
-                    <p>Hola</p>
-
+                    <p class="p__space">Hola&nbsp;Hola</p>
+                    <div id="list"></div>
                 </div>
                 <embed src="" type="" id="embed-pdf" width="100%" zoom="100%">
             </div>
@@ -92,6 +92,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.5/purify.min.js"></script>
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script type="module" src="js/common/common.js"></script>
+    <script type="module" src="js/common/json-teachers.js"></script>
     <script type="module" src="js/gen-pdf-maestro.js"></script>
 </body>
 
