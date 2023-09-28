@@ -79,7 +79,12 @@
 }
 .footer-base {
     background-color: #10069f;
-    
+    margin-top: 5rem;
+    text-align: center
+}
+.footer-base--leercsv {
+    background-color: #10069f;
+    margin-top: 15rem;
     text-align: center
 }
 
@@ -668,7 +673,7 @@ p {
  .table{
     margin: 0 auto;
     border: 1px solid #000;
-    margin-bottom: 3rem;
+    margin-bottom: 10rem;
     width:500px;
     background-color:lightgray;
  }
@@ -760,6 +765,7 @@ button.paginacion:hover{
 .p__space{
     white-space: normal;
 }
+
 /*========== TERMINA ESTILOS PARA GENERAR PDF POR MAESTRO*/
 
 

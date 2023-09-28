@@ -71,6 +71,14 @@ $(document).ready(function () {
           // Crear una nueva fila en la tabla
           let newRow = $("<tr>");
 
+          for (let j = 2; j < 6; j++) {
+            if (dataArray[i][j]==="" || +dataArray[i][j]===NaN) {
+              console.log(dataArray[i][j]);
+              dataArray[i][j]="0";
+              console.log(dataArray[i][j]);
+            }
+            
+          }
           // Data transform
 
           if ($("#table__tipo option:selected").text() === "Tiempo Completo") {
@@ -79,6 +87,19 @@ $(document).ready(function () {
             }
             if (dataArray[i][7] === "") {
               dataArray[i][7] = "0";
+            }
+          }
+          if ($("#table__tipo option:selected").text() === "Técnico Académico") {
+            if (dataArray[i][6] === "0") {
+              dataArray[i][6] = "";
+            }
+            if (dataArray[i][7] === "") {
+              dataArray[i][7] = "0";
+            }
+          }
+          if ($("#table__tipo option:selected").text() === "Asignatura") {
+            if (dataArray[i][6] === "0") {
+              dataArray[i][6] = "";
             }
           }
 

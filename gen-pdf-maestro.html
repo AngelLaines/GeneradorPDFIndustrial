@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horario Aulas - Iniciar Sesión</title>
+    <title>Generar PDF</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
@@ -49,33 +49,37 @@
         </aside>
         <main class="auth contenedor ">
 
-            <h2 class="text-center profe__heading">Ver Maestro</h2>
+            <h2 class="text-center profe__heading">Generar PDF Individual</h2>
 
             <form id="numberForm">
                 Id de maestro: <input type="text" name="id profesor" id="id-prof">
                 <button type="button" id="buscar">Buscar</button>
-                <div id="result"> 
+                <div id="result">
                     <p id="r_maestro">Maestro: </p>
                     <p id="r_tipo-maestro">Tipo de Maestro: </p>
-                    
+
                 </div>
-                <button type="button"class="btn__pdf" id="btn-gen-pdf">Generar PDF</button>
+                <button type="button" class="btn__pdf" id="btn-gen-pdf">Generar PDF</button>
             </form>
 
             <div id="embed-div" width="800px" height="400px">
-                <div id="content" hidden >
+
+                <div id="content" hidden>
                     <div class="header__logo">
                         <img src="build/img/logo2_unison.png" alt="imagen unison" class="pdf__imagen">
                     </div>
-                    <p class="p__space">Hola Hola</p>
-                    <div id="list"></div>
+                    <p id="name__maestro"></p>
+                    <div id="list">
+                        
+                    </div>
                 </div>
-                <embed src="" type="" id="embed-pdf" width="100%" zoom="100%">
+
+
             </div>
         </main>
     </div>
 
-    <footer class="footer-base">
+    <footer class="footer-base--leercsv ">
         <div class="footer__container contenedor">
 
             <div class="footer__imagen-base">
@@ -86,7 +90,8 @@
 
         </div>
 
-    </footer> 
+    </footer>
+
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/jquer.printarea.js"></script>
     <script type="module" src="js/common/common.js"></script>
