@@ -1,13 +1,4 @@
-// Realizado por satito el 24/09/23
-import { getType,logout } from "./common/common.js";
-let pagina = 1;
-let totalPages = 0;
-$(document).ready(function () {
-
-    let tipo = getType($('#table__tipo option:selected').text());
-    $.post('db/type-teacher.php', { tipo }, function (data) {
-        console.log(JSON.parse(data));
-        page(JSON.parse(data));
+// Realizado por satito el a));
     });
 
     // Lo siguiente lo hizo el sato
