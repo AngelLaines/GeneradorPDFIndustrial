@@ -1,47 +1,63 @@
 import { convertType } from "./common/common.js";
+import { days, months } from "./common/dates.js";
 import { asignatura, tecnicoAcademico, tiempoCompleto } from "./common/json-teachers.js";
 $(document).ready(function () {
     $("#buscar").click(function () {
         let idMaestro = $("#id-prof").val();
         if (idMaestro !== "" || +idMaestro !== NaN) {
             $.post("db/query-maestros.php", { IdMaestro: idMaestro }, function (data) {
+                const date = new Date();
+                console.log(days[date.getDay()]);
+                console.log(months[date.getMonth()]);
+                $("#fecha").text(`Hermosillo, Sonora a ${date.getDate()} de ${months[date.getMonth()]} de ${date.getFullYear()}`);
+
                 let result = JSON.parse(data);
+                let teacher = `<p class="line--height">PROFESOR ${result[1]}</p>
+                <p class="line--height">Departamento de Ingenieria Industrial</p>
+                <p class="line--height">P r e s e n t e.-</p>
+           `;
                 console.log(result);
-                let listDiv = $("#list");
-                $("#name__maestro").text(`Mtro. ${result[1]}`);
+                let listDiv = $("#list ul");
                 listDiv.empty();
+                $("#name__maestro").empty();
                 if (result[result.length - 1] === "tiempo_completo") {
-                    listDiv.append("<p>• " + tiempoCompleto.A[result[2]] + "</p>");
-                    listDiv.append("<p>• " + tiempoCompleto.B[result[3]] + "</p>");
-                    listDiv.append("<p>• " + tiempoCompleto.C[result[4]] + "</p>");
-                    listDiv.append("<p>• " + tiempoCompleto.D[result[5]] + "</p>");
+                    listDiv.append("<li> " + tiempoCompleto.A[result[2]] + "</li>");
+                    listDiv.append("<li> " + tiempoCompleto.B[result[3]] + "</li>");
+                    listDiv.append("<li> " + tiempoCompleto.C[result[4]] + "</li>");
+                    listDiv.append("<li> " + tiempoCompleto.D[result[5]] + "</li>");
                     if (result[6] !== "") {
-                        listDiv.append("<p>• " + tiempoCompleto.E[result[6]] + "</p>");
+                        listDiv.append("<li> " + tiempoCompleto.E[result[6]] + "</li>");
                     }
-                    listDiv.append("<p>• " + tiempoCompleto.F[result[7]] + "</p>");
+                    listDiv.append("<li> " + tiempoCompleto.F[result[7]] + "</li>");
                 }
                 if (result[result.length - 1] === "tecnico_academico") {
-                    listDiv.append("<p>• " + tecnicoAcademico.A[result[2]] + "</p>");
-                    listDiv.append("<p>• " + tecnicoAcademico.B[result[3]] + "</p>");
-                    listDiv.append("<p>• " + tecnicoAcademico.C[result[4]] + "</p>");
-                    listDiv.append("<p>• " + tecnicoAcademico.D[result[5]] + "</p>");
+                    teacher = `<p class="line--height">TECNICO ACADEMICO ${result[1]}</p>
+                <p class="line--height">Departamento de Ingenieria Industrial</p>
+                <p class="line--height">P r e s e n t e.-</p>
+           `;
+                    listDiv.append("<li> " + tecnicoAcademico.A[result[2]] + "</li>");
+                    listDiv.append("<li> " + tecnicoAcademico.B[result[3]] + "</li>");
+                    listDiv.append("<li> " + tecnicoAcademico.C[result[4]] + "</li>");
+                    listDiv.append("<li> " + tecnicoAcademico.D[result[5]] + "</li>");
                     if (result[6] !== "") {
-                        listDiv.append("<p>• " + tecnicoAcademico.E[result[6]] + "</p>");
+                        listDiv.append("<li> " + tecnicoAcademico.E[result[6]] + "</li>");
                     }
-                    listDiv.append("<p>• " + tecnicoAcademico.F[result[7]] + "</p>");
+                    listDiv.append("<li> " + tecnicoAcademico.F[result[7]] + "</li>");
                 }
                 if (result[result.length - 1] === "asignatura") {
-                    listDiv.append("<p>• " + asignatura.A[result[2]] + "</p>");
-                    listDiv.append("<p>• " + asignatura.B[result[3]] + "</p>");
-                    listDiv.append("<p>• " + asignatura.C[result[4]] + "</p>");
-                    listDiv.append("<p>• " + asignatura.D[result[5]] + "</p>");
+                    listDiv.append("<li> " + asignatura.A[result[2]] + "</li>");
+                    listDiv.append("<li> " + asignatura.B[result[3]] + "</li>");
+                    listDiv.append("<li> " + asignatura.C[result[4]] + "</li>");
+                    listDiv.append("<li> " + asignatura.D[result[5]] + "</li>");
                     if (result[6] !== "") {
-                        listDiv.append("<p>• " + asignatura.E[result[6]] + "</p>");
+                        listDiv.append("<li> " + asignatura.E[result[6]] + "</li>");
                     }
                 }
 
-                $("#r_maestro").text("Maestro: "+result[1]);
-                $("#r_tipo-maestro").text("Tipo de Maestro: "+convertType(result[result.length - 1]));
+                $("#name__maestro").append(teacher);
+
+                $("#r_maestro").text("Maestro: " + result[1]);
+                $("#r_tipo-maestro").text("Tipo de Maestro: " + convertType(result[result.length - 1]));
             });
         } else {
             alert("Ingrese un numero de empleado valido");
@@ -53,9 +69,9 @@ $(document).ready(function () {
         //let uri = 'test.pdf#toolbar=0&navpanes=0&scrollbar=0';
 
         const mode = 'iframe';
-        const close = mode==='iframe';
+        const close = mode === 'iframe';
         const options = {
-            mode,popClose:close
+            mode, popClose: close
         }
         console.log(options);
         $("#content").printArea(options);
