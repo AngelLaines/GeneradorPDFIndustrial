@@ -20,6 +20,7 @@ $(document).ready(function () {
   });
 
   $("#readFile").on("click", function () {
+    console.log("ñ");
     dataArray = [];
     dataHeaderArray = [];
     let archivoCSV = document.getElementById("archivoCSV");
@@ -27,20 +28,20 @@ $(document).ready(function () {
     // Verificar si se seleccionó un archivo
     if (archivoCSV.files.length > 0) {
       let archivo = archivoCSV.files[0];
+
       let lector = new FileReader();
 
       lector.onload = function (e) {
         let contenido = e.target.result;
+        
         // Dividir el contenido del CSV en líneas
         let lineas = contenido.split("\n");
-
         dataHeaderArray = lineas[10].split(',');
-        console.log(dataHeaderArray);
         // Recorrer las líneas del CSV
         for (let i = 11; i < lineas.length; i++) {
           let valores = lineas[i].split(",");
           valores[valores.length - 1] = valores[valores.length - 1].split('\r').length > 1 ? valores[valores.length - 1].split('\r')[0] : valores[valores.length - 1];
-          console.log(valores);
+          
           if (valores.length >= 3) {
             // let numero = valores[0];
             // let nombre = valores[1];
@@ -60,7 +61,6 @@ $(document).ready(function () {
 
         let header = $("#header-table");
         for (let i = 0; i < dataHeaderArray.length; i++) {
-          console.log(dataHeaderArray[i]);
           header.append("<th>" + dataHeaderArray[i] + "</th>");
         }
         for (let i = 0; i < dataArray.length; i++) {
@@ -105,6 +105,7 @@ $(document).ready(function () {
 
           //
 
+
           newRow.append("<td class='td__maestro'>" + numeroEmpleado + "</td>");
           newRow.append("<td class='td__maestro'>" + nombreAcademico + "</td>");
           newRow.append("<td class='td__maestro'>" + dataArray[i][2] + "</td>");
@@ -116,24 +117,14 @@ $(document).ready(function () {
           if (dataArray[i].length === 8) {
             newRow.append("<td class='td__maestro'>" + dataArray[i][7] + "</td>");
           }
-
-          // // Crear un botón "Generar PDF" en la columna correspondiente
-          // let pdfButton = $("<button>").text("PDF");
-          // pdfButton.addClass("btn__pdf"); // Agregar una clase si es necesario
-          // pdfButton.on("click", function () {
-          //   // Aquí puedes agregar la lógica para generar el PDF
-          //   // Puedes usar la información de la fila actual (dataArray[i])
-          // });
-          // //newRow.append($("<td class='td__maestro'>").append(pdfButton));
-
-          // Agregar la fila a la tabla
           $(".table tbody").append(newRow);
         }
 
       };
 
       // Leer el archivo como texto
-      lector.readAsText(archivo);
+      lector.readAsText(archivo,"UTF-8");
+      console.log(archivo);
       $("#saveData").css("display", "inline");
     } else {
       alert("Por favor, seleccione un archivo CSV.");
