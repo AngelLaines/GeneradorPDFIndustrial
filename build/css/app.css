@@ -840,3 +840,36 @@ div#content{
 
 
 /*=========ESTILOS PARA GENERAR PDF DE TODOS LOS PROfES*/
+
+
+/* ======== ESTILOS PARA FORMULARIO DE REGISTRO DE PROFES */
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.center{
+    align-items: center;
+}
+
+.column input[type="text"]{
+    width: 300px;
+    margin: 10px;
+}
+
+.column input[type="radio"]{
+    margin-top: 2px;
+    margin-right: 5px;
+}
+
+.v-center{
+    align-items: flex-start;
+}
+
+/* ======== TERMINA ESTILOS PARA FORMULARIO DE REGISTRO DE PROFES */
