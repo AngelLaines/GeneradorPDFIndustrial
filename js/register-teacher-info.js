@@ -1,20 +1,37 @@
-import { logout } from "./common/common.js";
+import { getType, logout } from "./common/common.js";
 
-$(document).ready(function(){
+$(document).ready(function () {
     tipoMaestroChange();
-    $("#tipo-maestro").change(function(){
+    $("#tipo-maestro").change(function () {
         tipoMaestroChange();
     });
-    $("#logout").click(function(){
+    $("#logout").click(function () {
         logout();
-    })
-})
+    });
+});
 
-function tipoMaestroChange(){
+$(document).ready(function () {
+    $("#guardar").click(function () {
+        console.log("object");
+        let data = [];
+        const tipo = getType($("#tipo-maestro option:selected").text());
+        console.log(tipo);
+        if (tipo === "tiempo_completo" || tipo === "tecnico_academico") {
+            data.push($("#num-expediente").val());
+            data.push($("#name"));
+            data.push($("input[name='plan-actividades']:checked").val());
+            console.log(data);
+        } else if (tipo === "asignatura") {
+
+        }
+    })
+});
+
+function tipoMaestroChange() {
     $("#options").empty();
     const tipo = $("#tipo-maestro option:selected").text();
-    
-    if (tipo==="Tiempo Completo" || tipo==="Técnico Académico") {
+
+    if (tipo === "Tiempo Completo" || tipo === "Técnico Académico") {
         $("#options").append(`
         <div>
             <div>
@@ -83,7 +100,7 @@ function tipoMaestroChange(){
             </div>
         </div>
         `);
-    } else if(tipo==="Asignatura"){
+    } else if (tipo === "Asignatura") {
         $("#options").append(`
         <div>
             <div>
