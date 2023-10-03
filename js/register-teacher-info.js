@@ -16,14 +16,58 @@ $(document).ready(function () {
         let data = [];
         const tipo = getType($("#tipo-maestro option:selected").text());
         console.log(tipo);
+        data.push($("#num-expediente").val());
+        data.push($("#name").val());
         if (tipo === "tiempo_completo" || tipo === "tecnico_academico") {
-            data.push($("#num-expediente").val());
-            data.push($("#name"));
             data.push($("input[name='plan-actividades']:checked").val());
+            data.push($("input[name='informe-actividades']:checked").val());
+            data.push($("input[name='concordancia-actividades']:checked").val());
+            data.push($("input[name='actividades-reportadas']:checked").val());
+            data.push($("input[name='actividades-opcionales']:checked").val());
+            data.push($("input[name='actividades-sustentadas']:checked").val());
             console.log(data);
         } else if (tipo === "asignatura") {
-
+            data.push($("input[name='plan-actividades']:checked").val());
+            data.push($("input[name='informe-actividades']:checked").val());
+            data.push($("input[name='concordancia-actividades']:checked").val());
+            data.push($("input[name='descripcion-desarrollo']:checked").val());
+            data.push($("input[name='actividades-extraordinarias']:checked").val());
         }
+
+        for (let i = 0; i < data.length; i++) {
+            if (i!==6) {
+                if(data[i]===undefined || data[i]===""){
+                    alert("Asegurese de seleccionar y/o rellenar los campos obligatorios");
+                    break;
+                }
+            }
+        }
+        if (data[6]===undefined) {
+            data[6]="";
+        }
+
+        console.log(data);
+        $.post("./db/register-teacher-info.php", {tipo,data},
+            function (result) {
+                console.log(result);
+                let message = "";
+                switch (result) {
+                    case "1":
+                        message=`Error de conexion con la base de datos`;
+                        break;
+                    case "2":
+                        message=`Datos guardados con exito`;
+                        break;
+                    case "3":
+                        message=`Error de seleccion de tabla de base de datos`;
+                        break;
+                    default:
+                        message=`El maestro que intenta calificar ya se encuentra calificado en ${JSON.parse(result)[0]}`;
+                        break;
+                }
+                alert(message);
+            }
+        );
     })
 });
 
