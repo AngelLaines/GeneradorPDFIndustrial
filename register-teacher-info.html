@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="es-ES">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leer CSV</title>
+    <title>Horario Aulas - Iniciar Sesión</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@
             <div class="header__contenido">
                 <h1 class="header__heading">Generador PDF</h1>
 
-                <p class="header__texto">Departamento de Ingeniería Industrial</>
+                <p class="header__texto">Departamento de Ingeniería Industrial</p>
                 </div>
                 <input type="button" class="formulario__submit-base" value="Cerrar Sesión" id="logout">
 
@@ -55,51 +56,31 @@
 
             
         </aside>
-        <main class="auth contenedor">
+        <main class="auth contenedor ">
 
             
-            <h2 class="text-center profe__heading">Ingrese un archivo CSV</h2>
+            <h2 class="text-center profe__heading">Calificar maestro</h2>
+            <select class="table__tipo" name="" id="tipo-maestro">
+                <option value="">Tiempo Completo</option>
+                <option value="">Técnico Académico</option>
+                <option value="">Asignatura</option>
+            </select>
+            <div class="column center">
+                <div class="column">
+                    <input type="text" name="" id="num-expediente" placeholder="Numero de empleado">
+                    <input type="text" name="" id="name" placeholder="Nombre del maestro">
+                </div>
+                <div class="column" id="options">
+                </div>
+                <div>
+                    <button id="guardar">Guardar</button>
+                </div>
+            </div>
 
-            <table class="table"> 
-                <thead>
-                    <select class="table__tipo" name="table__tipo" id="table__tipo">
-                        <option selected value="completo">Tiempo Completo</option>
-                        <option value="academico">Técnico Académico</option>
-                        <option value="asignatura">Asignatura</option>
-                    </select>
-                    <input type="file" name="Archivo" id="archivoCSV" accept=".csv">
-                    <button id="readFile" style="display:none">Leer archivo</button>
-                    <button id="saveData" style="display:none">Guardar</button>
-                    <tr id = "header-table">
-                        <!-- <th>Número de Empleado</th>
-                        <th>Nombre del Académico</th>
-                        <th>Generar PDF</th> -->
-                
-                    </tr>
-
-                    <tbody>
-                        <!-- <tr>
-                            <td class="td__maestro">23051</td>
-                            <td class="td__maestro">Jorge Rountree Cons</td>
-                            <td class="td__maestro"> <button class="btn__pdf"> PDF</button></td>
-                        </tr> -->
-                    </tbody>
-
-                </thead>
-
-            </table>
-            
-    
-    
-    
-    
-         
-    
-    
         </main>
     </div>
 
-    <footer class="footer-base--leercsv ">
+    <footer class="footer-base">
         <div class="footer__container contenedor">
           
             <div class="footer__imagen-base">
@@ -112,9 +93,8 @@
 
     </footer>
     <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     <script type="module" src="js/common/common.js"></script>
-    <script type="module" src="js/readFile.js" charset="UTF-8"></script>
+    <script type="module" src="js/register-teacher-info.js"></script>
 </body>
 
 </html>
