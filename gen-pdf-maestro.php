@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['name'])) {
+    header('Location:login.html');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,10 +47,11 @@
 
 
             <nav class="sidebar-nav">
-                <a class="nav__link" href="leerCSV.html">Leer CSV</a>
-                <a class="nav__link" href="register-teacher-info.html">Evaluar Maestros</a>
-                <a class="nav__link" href="ver-maestros.html">Ver Maestros</a>
-                <a class="nav__link" href="gen-pdf-maestro.html">Generar PDF</a>
+                <a class="nav__link" href="leerCSV.php">Leer CSV</a>
+                <a class="nav__link" href="register-teacher-info.php">Evaluar Maestros</a>
+                <a class="nav__link" href="ver-maestros.php">Ver Maestros</a>
+                <a class="nav__link" href="gen-pdf-maestro.php">Generar PDF</a>
+                <a class="nav__link" href="agregar-maestro.php">Registrar Maestro</a>
             </nav>
 
         </aside>
@@ -56,9 +63,12 @@
                 Id de maestro: <input type="text" name="id profesor" id="id-prof">
                 <button type="button" id="buscar">Buscar</button>
                 <div id="result">
+                    <div class="mt-1">
+                        <label for="">Semestre: </label>
+                        <select name="" id="semestre"></select>
+                    </div>
                     <p id="r_maestro">Maestro: </p>
                     <p id="r_tipo-maestro">Tipo de Maestro: </p>
-
                 </div>
                 <button type="button" class="btn__pdf" id="btn-gen-pdf">Generar PDF</button>
             </form>
@@ -135,8 +145,7 @@
                                 Hermosillo, Sonora, México
                             </p>
                             <p class=" line--height fs--1-25">
-                                Tel. (662) 259 21 59, Ext. 8159, Fax. (662) 259 21 60. <span
-                                    class="href">www.industrial.uson.mx</span>
+                                Tel. (662) 259 21 59, Ext. 8159, Fax. (662) 259 21 60. <span class="href">www.industrial.uson.mx</span>
                             </p>
                         </div>
                     </div>

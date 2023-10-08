@@ -1,19 +1,17 @@
 // Realizado por satito el 24/09/23
-import { getType,logout } from "./common/common.js";
+import { convertType, getType,logout } from "./common/common.js";
 let pagina = 1;
 let totalPages = 0;
 $(document).ready(function () {
 
-    let tipo = getType($('#table__tipo option:selected').text());
-    $.post('db/type-teacher.php', { tipo }, function (data) {
-        console.log(JSON.parse(data));
+    $.post('db/type-teacher.php', {}, function (data) {
+        $(".table tbody").empty();
+        $(".pag").empty();
         page(JSON.parse(data));
     });
-
     // Lo siguiente lo hizo el sato
     $("#table__tipo").change(function (e) {
-        tipo = getType($('#table__tipo option:selected').text());
-        $.post('db/type-teacher.php', { tipo }, function (data) {
+        $.post('db/type-teacher.php', {}, function (data) {
             $(".table tbody").empty();
             $(".pag").empty();
             page(JSON.parse(data));
@@ -42,20 +40,26 @@ function cambiarPagina(pag, data) {
     // Mostrar renglon por renglon lo del arreglo (mas tarde el arreglo sera la query de la base de datos con los datos de los profesores)
     if (data.length > 10) {
         for (let i = (0 + (10 * (pag - 1))); i < 10 * pag; i++) {
+            
             if (data[i]) {
+                data[i][3] =data[i][3] === '1' ? 'Activo':'Inactivo';
                 $(".table tbody").append("<tr>");
                 $(".table tbody").append("<td class=\"td__maestro\">" + data[i][0] + "</td>");
                 $(".table tbody").append("<td class=\"td__maestro\">" + data[i][1] + "</td>");
-                $(".table tbody").append("<td class=\"td__maestro\">" + "Activo" + "</td>");
+                $(".table tbody").append("<td class=\"td__maestro\">" + convertType(data[i][2]) + "</td>");
+                $(".table tbody").append("<td class=\"td__maestro\">" + data[i][3] + "</td>");
                 $(".table tbody").append("</tr>");
             }
         }
     } else {
         data.forEach(row => {
+            console.log(typeof row[3]);
             $(".table tbody").append("<tr>");
+            row[3] =row[3] === '1' ? 'Activo':'Inactivo';
             $(".table tbody").append("<td class=\"td__maestro\">" + row[0] + "</td>");
             $(".table tbody").append("<td class=\"td__maestro\">" + row[1] + "</td>");
-            $(".table tbody").append("<td class=\"td__maestro\">" + "Activo" + "</td>");
+            $(".table tbody").append("<td class=\"td__maestro\">" + convertType(row[2]) + "</td>");
+            $(".table tbody").append("<td class=\"td__maestro\">" + row[3] + "</td>");
             $(".table tbody").append("</tr>");
         });
     }

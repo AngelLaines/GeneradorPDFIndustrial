@@ -2,21 +2,32 @@ import { convertType } from "./common/common.js";
 import { days, months } from "./common/dates.js";
 import { asignatura, tecnicoAcademico, tiempoCompleto } from "./common/json-teachers.js";
 $(document).ready(function () {
+
+    $.post("db/show-semester.php", {}, function (data) {
+        const result = JSON.parse(data);
+        console.table(result);
+        for (let i = 0; i < result.length; i++) {
+            $("#semestre").append(`
+                <option>${result[i][0]}</option>
+            `);
+        }
+    });
+
     $("#buscar").click(function () {
-        let idMaestro = $("#id-prof").val();
+        const idMaestro = $("#id-prof").val();
+        const semestre = $("#semestre option:selected").text();
         if (idMaestro !== "" || +idMaestro !== NaN) {
-            $.post("db/query-maestros.php", { IdMaestro: idMaestro }, function (data) {
+            $.post("db/query-maestros.php", { IdMaestro: idMaestro, semestre }, function (data) {
+                console.log(data);
                 const date = new Date();
-                console.log(days[date.getDay()]);
-                console.log(months[date.getMonth()]);
                 $("#fecha").text(`Hermosillo, Sonora a ${date.getDate()} de ${months[date.getMonth()]} de ${date.getFullYear()}`);
 
                 let result = JSON.parse(data);
-                let teacher = `<p class="line--height">PROFESOR ${result[1]}</p>
+                let teacher = `<p class="line--height">PROFESOR ${result[0]}</p>
                 <p class="line--height">Departamento de Ingenieria Industrial</p>
                 <p class="line--height">P r e s e n t e.-</p>
            `;
-                console.log(result);
+                console.table(result);
                 let listDiv = $("#list ul");
                 listDiv.empty();
                 $("#name__maestro").empty();
@@ -31,7 +42,7 @@ $(document).ready(function () {
                     listDiv.append("<li> " + tiempoCompleto.F[result[7]] + "</li>");
                 }
                 if (result[result.length - 1] === "tecnico_academico") {
-                    teacher = `<p class="line--height">TECNICO ACADEMICO ${result[1]}</p>
+                    teacher = `<p class="line--height">TECNICO ACADEMICO ${result[0]}</p>
                 <p class="line--height">Departamento de Ingenieria Industrial</p>
                 <p class="line--height">P r e s e n t e.-</p>
            `;

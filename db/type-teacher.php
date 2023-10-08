@@ -1,14 +1,13 @@
 <?php
 include "common/common.php";
 $conn = (new Common)->connection();
-$tipo = $_POST['tipo'];
 $error = 1;
 
 
 if ($conn->connect_errno) {
     $error = 1;
 } else {
-    $sql = "select num_empleado, nombre_maestro from " . $tipo;
+    $sql = "select * from maestros";
     $rows1 = mysqli_fetch_all($conn->query($sql));
     if ($rows1 === null) {
         $error = 3;

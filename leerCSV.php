@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['name'])) {
+    header('Location:login.html');
+}
+?>
 <!DOCTYPE html>
 <html lang="es-ES">
 
@@ -22,8 +28,8 @@
                 <h1 class="header__heading">Generador PDF</h1>
 
                 <p class="header__texto">Departamento de Ingeniería Industrial</>
-                </div>
-                <input type="button" class="formulario__submit-base" value="Cerrar Sesión" id="logout">
+            </div>
+            <input type="button" class="formulario__submit-base" value="Cerrar Sesión" id="logout">
 
 
 
@@ -36,31 +42,32 @@
     <div class="dashboard">
 
         <aside class="menu">
-            
 
-                
-                <h2 class="menu__heading">Menu</h2>
-                    
-                
-                <nav class="sidebar-nav">
-                    <a class="nav__link" href="leerCSV.html">Leer CSV</a>
-                    <a class="nav__link" href="register-teacher-info.html">Evaluar Maestros</a>
-                    <a class="nav__link" href="ver-maestros.html">Ver Maestros</a>
-                    <a class="nav__link" href="gen-pdf-maestro.html">Generar PDF</a>
-                </nav>
-            
-            
-            
-        
 
-            
+
+            <h2 class="menu__heading">Menu</h2>
+
+
+            <nav class="sidebar-nav">
+                <a class="nav__link" href="leerCSV.php">Leer CSV</a>
+                <a class="nav__link" href="register-teacher-info.php">Evaluar Maestros</a>
+                <a class="nav__link" href="ver-maestros.php">Ver Maestros</a>
+                <a class="nav__link" href="gen-pdf-maestro.php">Generar PDF</a>
+                <a class="nav__link" href="agregar-maestro.php">Registrar Maestro</a>
+            </nav>
+
+
+
+
+
+
         </aside>
         <main class="auth contenedor">
 
-            
+
             <h2 class="text-center profe__heading">Ingrese un archivo CSV</h2>
 
-            <table class="table"> 
+            <table class="table">
                 <thead>
                     <select class="table__tipo" name="table__tipo" id="table__tipo">
                         <option selected value="completo">Tiempo Completo</option>
@@ -70,38 +77,38 @@
                     <input type="file" name="Archivo" id="archivoCSV" accept=".csv">
                     <button id="readFile" style="display:none">Leer archivo</button>
                     <button id="saveData" style="display:none">Guardar</button>
-                    <tr id = "header-table">
+                    <tr id="header-table">
                         <!-- <th>Número de Empleado</th>
                         <th>Nombre del Académico</th>
                         <th>Generar PDF</th> -->
-                
+
                     </tr>
 
-                    <tbody>
-                        <!-- <tr>
+                <tbody>
+                    <!-- <tr>
                             <td class="td__maestro">23051</td>
                             <td class="td__maestro">Jorge Rountree Cons</td>
                             <td class="td__maestro"> <button class="btn__pdf"> PDF</button></td>
                         </tr> -->
-                    </tbody>
+                </tbody>
 
                 </thead>
 
             </table>
-            
-    
-    
-    
-    
-         
-    
-    
+
+
+
+
+
+
+
+
         </main>
     </div>
 
     <footer class="footer-base--leercsv ">
         <div class="footer__container contenedor">
-          
+
             <div class="footer__imagen-base">
                 <h3 class="footer__titulo">Desarrollado por:</h3>
                 <img src="build/img/logo_csti.jpeg" alt="logo csti" class="footer__csti">

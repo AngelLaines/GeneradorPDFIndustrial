@@ -4,9 +4,8 @@ $(document).ready(()=>{
         const pass = $('#password').val();
 
         $.post('./db/login.php',{user,pass},function(data){
-            alert(data);
             if(data!=='Usuario y/o contraseña incorrectos'){
-                window.location.href = 'leerCSV.html'
+                window.location.href = 'leerCSV.php'
             }
         });
     });

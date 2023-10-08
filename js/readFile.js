@@ -1,4 +1,4 @@
-import { getType,logout } from "./common/common.js";
+import { getType, logout } from "./common/common.js";
 
 $(document).ready(function () {
 
@@ -33,7 +33,7 @@ $(document).ready(function () {
 
       lector.onload = function (e) {
         let contenido = e.target.result;
-        
+
         // Dividir el contenido del CSV en líneas
         let lineas = contenido.split("\n");
         dataHeaderArray = lineas[10].split(',');
@@ -41,18 +41,8 @@ $(document).ready(function () {
         for (let i = 11; i < lineas.length; i++) {
           let valores = lineas[i].split(",");
           valores[valores.length - 1] = valores[valores.length - 1].split('\r').length > 1 ? valores[valores.length - 1].split('\r')[0] : valores[valores.length - 1];
-          
-          if (valores.length >= 3) {
-            // let numero = valores[0];
-            // let nombre = valores[1];
-            // let evaluacion = valores.slice(2).join(",");
-            // console.log(evaluacion);
-            // let profesorData = {
-            //   numero: numero,
-            //   nombre: nombre,
-            //   evaluacion: evaluacion,
-            // };
 
+          if (valores.length >= 3) {
             dataArray.push(valores);
           }
         }
@@ -72,12 +62,12 @@ $(document).ready(function () {
           let newRow = $("<tr>");
 
           for (let j = 2; j < 6; j++) {
-            if (dataArray[i][j]==="" || +dataArray[i][j]===NaN) {
+            if (dataArray[i][j] === "" || +dataArray[i][j] === NaN) {
               console.log(dataArray[i][j]);
-              dataArray[i][j]="0";
+              dataArray[i][j] = "0";
               console.log(dataArray[i][j]);
             }
-            
+
           }
           // Data transform
 
@@ -103,6 +93,18 @@ $(document).ready(function () {
             }
           }
 
+          // Semester
+
+          const date = new Date();
+          const year = date.getFullYear();
+          const month = date.getMonth();
+
+          if (month > 5) {
+            dataArray[i].push(`${year}-2`);
+          } else if (month <= 5) {
+            dataArray[i].push(`${year}-1`);
+          }
+
           //
 
 
@@ -123,7 +125,7 @@ $(document).ready(function () {
       };
 
       // Leer el archivo como texto
-      lector.readAsText(archivo,"UTF-8");
+      lector.readAsText(archivo, "UTF-8");
       console.log(archivo);
       $("#saveData").css("display", "inline");
     } else {
@@ -132,9 +134,21 @@ $(document).ready(function () {
   });
 
   $("#saveData").click(function () {
+    console.table(dataArray);
     let type = getType($("#table__tipo option:selected").text());
     $.post("db/insert-teachers-data.php", { data: dataArray, type }, function (data) {
-      alert(data);
+      switch (data) {
+        case "1":
+          alert("Error de conexion con la base de datos");
+          break;
+      
+        case "2":
+          alert("Datos guardados correctamente");
+          break;
+      
+        default:
+          break;
+      }
     });
   });
   $("#logout").click(function () {
