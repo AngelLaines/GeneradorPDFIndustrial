@@ -123,6 +123,7 @@ if (!isset($_SESSION['name'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     <script type="module" src="js/common/common.js"></script>
     <script type="module" src="js/readFile.js" charset="UTF-8"></script>
+    <script src="js/common/logout.js"></script>
 </body>
 
 </html>

@@ -174,6 +174,7 @@ if (!isset($_SESSION['name'])) {
     <script type="module" src="js/common/common.js"></script>
     <script type="module" src="js/common/json-teachers.js"></script>
     <script type="module" src="js/gen-pdf-maestro.js"></script>
+    <script src="js/common/logout.js"></script>
 </body>
 
 </html>

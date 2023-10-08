@@ -110,6 +110,7 @@ if (!isset($_SESSION['name'])) {
     <script src="js/login.js"></script>
     <script type="module" src="js/common/common.js"></script>
     <script type="module" src="js/ver-maestros.js"></script>
+    <script src="js/common/logout.js"></script>
 </body>
 
 </html>

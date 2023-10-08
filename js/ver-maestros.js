@@ -18,10 +18,6 @@ $(document).ready(function () {
         });
     });
     // Fin de lo que hizo el sato
-
-    $("#logout").click(function(){
-        logout();
-    });
 });
 
 function cambiarPagina(pag, data) {

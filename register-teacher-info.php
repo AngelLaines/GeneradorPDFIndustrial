@@ -11,7 +11,9 @@ if (!isset($_SESSION['name'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horario Aulas - Iniciar Sesión</title>
+    <title>
+        Evaluar Maestro
+    </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
@@ -67,7 +69,7 @@ if (!isset($_SESSION['name'])) {
         <main class="auth contenedor ">
 
 
-            <h2 class="text-center profe__heading">Calificar maestro</h2>
+            <h2 class="text-center profe__heading">Evaluar Maestro</h2>
             <!-- <select class="table__tipo" name="" id="tipo-maestro">
                 <option value="">Tiempo Completo</option>
                 <option value="">Técnico Académico</option>
@@ -106,6 +108,7 @@ if (!isset($_SESSION['name'])) {
     <script src="js/jquery-3.7.1.min.js"></script>
     <script type="module" src="js/common/common.js"></script>
     <script type="module" src="js/register-teacher-info.js"></script>
+    <script src="js/common/logout.js"></script>
 </body>
 
 </html>

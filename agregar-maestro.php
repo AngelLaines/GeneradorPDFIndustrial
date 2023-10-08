@@ -99,6 +99,7 @@ if (!isset($_SESSION['name'])) {
     </footer>
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/agregar-maestro.js"></script>
+    <script src="js/common/logout.js"></script>
 </body>
 
 </html>
