@@ -1,9 +1,29 @@
-import { getType, logout } from "./common/common.js";
+import { convertType,getType, logout } from "./common/common.js";
 
 $(document).ready(function () {
-    tipoMaestroChange();
-    $("#tipo-maestro").change(function () {
-        tipoMaestroChange();
+
+    $("#buscar").click(function () {
+        const numEmpleado = $("#num-expediente").val();
+        if (numEmpleado !== '') {
+            //console.log(numEmpleado);
+            $.post("db/buscar-maestro.php", { numEmpleado }, function (data) {
+                const result = JSON.parse(data);
+                console.log(result);
+                switch (result) {
+                    case 1:
+                        alert("Error de conexion con la base de datos.");
+                        break;
+                    case 2:
+                        alert(`El maestro con numero de empleado ${numEmpleado} no se encuentra registrado.`);
+                        break;
+                    default:
+                        console.table(result);
+                        $("#name").val(result[1]);
+                        tipoMaestroChange(result[2]);
+                        break;
+                }
+            });
+        }
     });
     $("#logout").click(function () {
         logout();
@@ -14,10 +34,9 @@ $(document).ready(function () {
     $("#guardar").click(function () {
         console.log("object");
         let data = [];
-        const tipo = getType($("#tipo-maestro option:selected").text());
+        const tipo = getType($("#tipo-maestro").val());
         console.log(tipo);
         data.push($("#num-expediente").val());
-        data.push($("#name").val());
         if (tipo === "tiempo_completo" || tipo === "tecnico_academico") {
             data.push($("input[name='plan-actividades']:checked").val());
             data.push($("input[name='informe-actividades']:checked").val());
@@ -35,34 +54,45 @@ $(document).ready(function () {
         }
 
         for (let i = 0; i < data.length; i++) {
-            if (i!==6) {
-                if(data[i]===undefined || data[i]===""){
+            if (i !== 5) {
+                if (data[i] === undefined || data[i] === "") {
                     alert("Asegurese de seleccionar y/o rellenar los campos obligatorios");
                     break;
                 }
             }
         }
-        if (data[6]===undefined) {
-            data[6]="";
+        if (data[5] === undefined) {
+            data[5] = "";
+        }
+
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = date.getMonth();
+        console.log({year,month});
+
+        if (month>5) {
+            data.push(`${year}-2`);
+        } else if (month<=5){
+            data.push(`${year}-1`);
         }
 
         console.log(data);
-        $.post("./db/register-teacher-info.php", {tipo,data},
+        $.post("./db/register-teacher-info.php", { tipo, data },
             function (result) {
                 console.log(result);
                 let message = "";
                 switch (result) {
                     case "1":
-                        message=`Error de conexion con la base de datos`;
+                        message = `Error de conexion con la base de datos`;
                         break;
                     case "2":
-                        message=`Datos guardados con exito`;
+                        message = `Datos guardados con exito`;
                         break;
                     case "3":
-                        message=`Error de seleccion de tabla de base de datos`;
+                        message = `Error de seleccion de tabla de base de datos`;
                         break;
                     default:
-                        message=`El maestro que intenta calificar ya se encuentra calificado en ${JSON.parse(result)[0]}`;
+                        message = `El maestro que intenta calificar ya se encuentra calificado en ${JSON.parse(result)[0]}`;
                         break;
                 }
                 alert(message);
@@ -71,12 +101,16 @@ $(document).ready(function () {
     })
 });
 
-function tipoMaestroChange() {
+function tipoMaestroChange(tipo) {
     $("#options").empty();
-    const tipo = $("#tipo-maestro option:selected").text();
-
+    console.log(tipo);
+    tipo = convertType(tipo);
     if (tipo === "Tiempo Completo" || tipo === "Técnico Académico") {
         $("#options").append(`
+        <div>
+            <input type="text" value="${tipo}" id="tipo-maestro" hidden>
+            <p>Tipo de maestro: ${tipo}</p>
+        </div>
         <div>
             <div>
                 <p>EL PLAN DE ACTIVIDADES FUE PRESENTADO EN TIEMPO Y FORMA</p>
