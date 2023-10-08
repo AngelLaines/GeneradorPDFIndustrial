@@ -51,10 +51,11 @@ if (!isset($_SESSION['name'])) {
 
             <nav class="sidebar-nav">
                 <a class="nav__link" href="leerCSV.php">Leer CSV</a>
-                <a class="nav__link" href="register-teacher-info.php">Evaluar Maestros</a>
                 <a class="nav__link" href="ver-maestros.php">Ver Maestros</a>
-                <a class="nav__link" href="gen-pdf-maestro.php">Generar PDF</a>
                 <a class="nav__link" href="agregar-maestro.php">Registrar Maestro</a>
+                <a class="nav__link" href="actualizar-maestro.php">Actualizar Maestro</a>
+                <a class="nav__link" href="register-teacher-info.php">Evaluar Maestros</a>
+                <a class="nav__link" href="gen-pdf-maestro.php">Generar PDF</a>
             </nav>
 
 
@@ -67,25 +68,27 @@ if (!isset($_SESSION['name'])) {
 
 
             <h2 class="text-center profe__heading">Ver Maestro</h2>
-            <div class="scroll__table">
-                <table class="table">
-                    <thead class="thead__maestro">
-
-                        <tr>
-                            <th>Número de Empleado</th>
-                            <th>Nombre</th>
-                            <th>Tipo</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                    </tbody>
-
-                </table>
-
-                <div class="pag">
-
+            <div class="column center">
+                <div class="w-80">
+                    <table class="table w-100">
+                        <thead class="thead__maestro">
+    
+                            <tr>
+                                <th>Número de Empleado</th>
+                                <th>Nombre</th>
+                                <th>Tipo</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                        </tbody>
+    
+                    </table>
+    
+                    <div class="pag">
+    
+                    </div>
                 </div>
             </div>
         </main>

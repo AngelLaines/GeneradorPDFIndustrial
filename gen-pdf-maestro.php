@@ -47,11 +47,12 @@ if (!isset($_SESSION['name'])) {
 
 
             <nav class="sidebar-nav">
-                <a class="nav__link" href="leerCSV.php">Leer CSV</a>
-                <a class="nav__link" href="register-teacher-info.php">Evaluar Maestros</a>
+            <a class="nav__link" href="leerCSV.php">Leer CSV</a>
                 <a class="nav__link" href="ver-maestros.php">Ver Maestros</a>
-                <a class="nav__link" href="gen-pdf-maestro.php">Generar PDF</a>
                 <a class="nav__link" href="agregar-maestro.php">Registrar Maestro</a>
+                <a class="nav__link" href="actualizar-maestro.php">Actualizar Maestro</a>
+                <a class="nav__link" href="register-teacher-info.php">Evaluar Maestros</a>
+                <a class="nav__link" href="gen-pdf-maestro.php">Generar PDF</a>
             </nav>
 
         </aside>
@@ -60,8 +61,8 @@ if (!isset($_SESSION['name'])) {
             <h2 class="text-center profe__heading">Generar PDF Individual</h2>
 
             <form id="numberForm">
-                Id de maestro: <input type="text" name="id profesor" id="id-prof">
-                <button type="button" id="buscar">Buscar</button>
+                Id de maestro: <input class="input-text" type="text" name="id profesor" id="id-prof">
+                <button class="buttons" type="button" id="buscar">Buscar</button>
                 <div id="result">
                     <div class="mt-1">
                         <label for="">Semestre: </label>

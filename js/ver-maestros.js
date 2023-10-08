@@ -42,7 +42,12 @@ function cambiarPagina(pag, data) {
         for (let i = (0 + (10 * (pag - 1))); i < 10 * pag; i++) {
             
             if (data[i]) {
-                data[i][3] =data[i][3] === '1' ? 'Activo':'Inactivo';
+                if (data[i][3] === '1') {
+                    data[i][3] = "Activo";
+                }
+                if (data[i][3] === '0') {
+                    data[i][3] = "Inactivo";
+                }
                 $(".table tbody").append("<tr>");
                 $(".table tbody").append("<td class=\"td__maestro\">" + data[i][0] + "</td>");
                 $(".table tbody").append("<td class=\"td__maestro\">" + data[i][1] + "</td>");
@@ -54,8 +59,15 @@ function cambiarPagina(pag, data) {
     } else {
         data.forEach(row => {
             console.log(typeof row[3]);
+            
+            if (row[3] === '1') {
+                row[3] = "Activo";
+            }
+            if (row[3] === '0') {
+                row[3] = "Inactivo";
+            }
+
             $(".table tbody").append("<tr>");
-            row[3] =row[3] === '1' ? 'Activo':'Inactivo';
             $(".table tbody").append("<td class=\"td__maestro\">" + row[0] + "</td>");
             $(".table tbody").append("<td class=\"td__maestro\">" + row[1] + "</td>");
             $(".table tbody").append("<td class=\"td__maestro\">" + convertType(row[2]) + "</td>");
