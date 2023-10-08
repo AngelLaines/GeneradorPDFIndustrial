@@ -20,6 +20,9 @@ $(document).ready(function(){
                         case "3":
                             alert("Error en la consulta");
                             break;
+                        case "4":
+                            alert(`El maestro con numero de empleado ${num_empleado} ya existe`);
+                            break;
                     }
                 }
             );

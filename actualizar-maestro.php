@@ -11,7 +11,7 @@ if (!isset($_SESSION['name'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horario Aulas - Iniciar Sesión</title>
+    <title>Actualizar Maestro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@ if (!isset($_SESSION['name'])) {
             <div class="header__contenido">
                 <h1 class="header__heading">Generador PDF</h1>
 
-                <p class="header__texto">Departamento de Ingeniería Industrial</p>
+                <p class="header__texto">Departamento de Ingeniería Industrial</>
             </div>
             <input type="button" class="formulario__submit-base" value="Cerrar Sesión" id="logout">
 
@@ -43,9 +43,6 @@ if (!isset($_SESSION['name'])) {
     <div class="dashboard">
 
         <aside class="menu">
-
-
-
             <h2 class="menu__heading">Menu</h2>
 
 
@@ -58,36 +55,50 @@ if (!isset($_SESSION['name'])) {
                 <a class="nav__link" href="gen-pdf-maestro.php">Generar PDF</a>
             </nav>
 
-
-
-
-
-
         </aside>
         <main class="auth contenedor ">
 
 
-            <h2 class="text-center profe__heading">Calificar maestro</h2>
-            <!-- <select class="table__tipo" name="" id="tipo-maestro">
-                <option value="">Tiempo Completo</option>
-                <option value="">Técnico Académico</option>
-                <option value="">Asignatura</option>
-            </select> -->
+            <h2 class="text-center profe__heading">Actualizar Maestro</h2>
             <div class="column center">
                 <div class="column">
                     <div>
-                        <input class="input-text" type="text" name="" id="num-expediente" placeholder="Numero de empleado">
-                        <button class="buttons" id="buscar">Buscar</button>
+                        <input class="input-text" type="text" name="" id="num-expediente" placeholder="Numero de empleado"><button class="buttons" id="buscar">Buscar</button>
+                    </div>    
+                    <input class="input-text" type="text" name="" id="name" placeholder="Nombre del maestro">
+                </div>
+                <div class="row mt-3">
+                    <div class="column mr-3">
+                        <div>
+                            <h3>
+                                Tipo de maestro:
+                            </h3>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="row v-center mt-1"><label class="row"><input type="radio" name="tipo-maestro" value="tiempo_completo">Tiempo Completo</label><br></div>
+                                <div class="row v-center mt-1"><label class="row"><input type="radio" name="tipo-maestro" value="tecnico_academico">Técnico Académico</label><br></div>
+                                <div class="row v-center mt-1"><label class="row"><input type="radio" name="tipo-maestro" value="asignatura">Asignatura</label><br></div>
+                            </div>
+                        </div>
                     </div>
-                    <input class="input-text" type="text" name="" id="name" placeholder="Nombre del maestro" readonly>
+                    <div class="column ml-3">
+                        <div>
+                            <h3>
+                                Estado:
+                            </h3>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="row v-center mt-1"><label class="row"><input type="radio" name="is-active" value="activo">Activo</label><br></div>
+                                <div class="row v-center mt-1"><label class="row"><input type="radio" name="is-active" value="inactivo">Inactivo</label><br></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="column" id="options">
+                <div class="column mt-2">
+                    <button class="buttons" id="guardar" disabled>Guardar</button>
                 </div>
-                <div class="column center mt-2">
-                    <button class="buttons" id="guardar">Guardar</button>
-                </div>
-            </div>
-
         </main>
     </div>
 
@@ -104,8 +115,7 @@ if (!isset($_SESSION['name'])) {
 
     </footer>
     <script src="js/jquery-3.7.1.min.js"></script>
-    <script type="module" src="js/common/common.js"></script>
-    <script type="module" src="js/register-teacher-info.js"></script>
+    <script src="js/actualizar-maestro.js"></script>
 </body>
 
 </html>

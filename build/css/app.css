@@ -22,6 +22,7 @@
     margin: 5rem 0 2rem;
     width: 25rem
 }
+
 .header__imagen--index {
     height: 12rem;
     margin: 2rem 0 2rem;
@@ -77,11 +78,13 @@
     padding: 3rem 0;
     text-align: center
 }
+
 .footer-base {
     background-color: #10069f;
     margin-top: 5rem;
     text-align: center
 }
+
 .footer-base--leercsv {
     background-color: #10069f;
     margin-top: 15rem;
@@ -132,7 +135,7 @@
 
 .footer__texto {
     color: #daaa00;
-   
+
 }
 
 .footer__texto:last-of-type {
@@ -147,7 +150,8 @@
     border-left: none;
     padding: 5rem
 }
-.footer__imagen-base{
+
+.footer__imagen-base {
     padding: 2rem;
 }
 
@@ -175,8 +179,8 @@
 .auth {
     margin: 25rem auto;
     width: min(95%, 60rem);
-    
-    
+
+
 }
 
 @media (min-width:768px) {
@@ -252,6 +256,7 @@
     -moz-transition-property: background-color;
     transition-property: background-color
 }
+
 .formulario__submit-base {
     background-color: #10069f;
     border: none;
@@ -277,6 +282,7 @@
     .formulario__submit {
         width: auto
     }
+
     .formulario__submit-base {
         margin-bottom: 0;
     }
@@ -285,6 +291,7 @@
 .formulario__submit:hover {
     background-color: #0b046e
 }
+
 .formulario__submit-base:hover {
     background-color: #0b046e
 }
@@ -296,6 +303,7 @@
         align-self: flex-start;
         width: auto
     }
+
     .formulario__submit-base {
         -ms-flex-item-align: start;
         -webkit-align-self: flex-start;
@@ -574,43 +582,46 @@ p {
 
 /*?===================== AQUI EMPIEZA TODO*/
 /*? CLASES GLOBALES*/
-.btn__pdf{
+.btn__pdf {
     padding: 1.5rem 3rem;
-    background-color:#F40F02;
+    background-color: #F40F02;
     color: #fff;
     border-radius: 1rem;
 
 }
- .btn__pdf:hover{
+
+.btn__pdf:hover {
     cursor: pointer;
     background-color: #ff756d74;
     color: #F40F02;
-  
+
 
 }
 
 /*?TERMINA CLASES GLOBALES*/
 /*?OJO AQUI VA TODO LO DE NAV BAR*/
-.dashboard{
+.dashboard {
     display: flex;
     flex-direction: column;
-    
+
 }
+
 @media (min-width: 768px) {
-    .dashboard{
+    .dashboard {
         display: flex;
 
     }
 }
-.menu{
+
+.menu {
     background-color: #10069f;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-   
+
 }
 
-.menu__heading{
+.menu__heading {
     text-align: center;
     color: white;
     font-size: 2rem;
@@ -618,8 +629,8 @@ p {
 }
 
 @media (min-width: 768px) {
-    
-    .menu__heading{
+
+    .menu__heading {
         text-align: center;
         color: white;
         font-size: 4rem;
@@ -627,11 +638,11 @@ p {
     }
 }
 
-.text-center{
+.text-center {
     text-align: center;
 }
 
-.sidebar-nav{
+.sidebar-nav {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -641,7 +652,7 @@ p {
 
 
 
-.nav__link{
+.nav__link {
     color: white;
     text-align: center;
     padding: 1.5rem 2rem;
@@ -652,89 +663,97 @@ p {
 
 }
 
-.nav__link:hover{
+.nav__link:hover {
     background-color: #daaa00;
-    color:#0b046e;
+    color: #0b046e;
     transform: scale(1.2) 3s ease;
     cursor: pointer;
 
-    
+
 }
 
 /*? AQUI TERMINA TODO LO DEL SIDEVAR */
 
 
 /*?===============PAGINA VER MAESTRO (BASE)*/
-.scroll__table{
+.scroll__table {
     overflow: hidden;
     overflow-x: scroll;
 }
 
- .table{
+.table {
     margin: 0 auto;
     border: 1px solid #000;
     margin-bottom: 10rem;
-    width:500px;
-    background-color:lightgray;
- }
- .table th{
+    width: 500px;
+    background-color: lightgray;
+}
+
+.table th {
     position: sticky;
-    top:0;
+    top: 0;
     background-color: #daaa00;
-    
- }
- .table tr{
+
+}
+
+.table tr {
     margin: 0;
- }
- .table__tipo{
+}
+
+.table__tipo {
     margin-inline: 10rem;
     margin-bottom: 2rem;
- }
- 
-.td__maestro{
+}
+
+.td__maestro {
     text-align: center;
     padding: 1rem;
 }
-.thead__maestro{
+
+.thead__maestro {
     background-color: #daaa00;
     color: #10069f;
 }
-.thead__maestro th{
+
+.thead__maestro th {
     padding: 1rem 2rem;
     border-radius: 1px;
 }
 
-.thead__maestro tr{
+.thead__maestro tr {
     font-size: 2rem;
 }
 
 
 /*?=================ESTILOS TERMINA VER_MAESTRO (BASE)===*/
-div.pag{
+div.pag {
     display: flex;
     justify-content: center;
 }
-button.paginacion{
-    margin-top:8px;
-    margin-bottom:8px;
-    margin-right:3px;
-    margin-left:3px;
-    padding:5px;
-    color:#fff;
-    background-color:#10069f;
-    border-color:#daaa00;
+
+button.paginacion {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 3px;
+    margin-left: 3px;
+    padding: 5px;
+    color: #fff;
+    background-color: #10069f;
+    border-color: #daaa00;
     border-radius: 1rem;
     border-style: solid;
 }
-button.paginacion.activo{
-    background-color:#daaa00;
-    border-color:#10069f;
-    color:#0b046e;
+
+button.paginacion.activo {
+    background-color: #daaa00;
+    border-color: #10069f;
+    color: #0b046e;
 }
-button.paginacion:hover{
-    background-color:#daaa00;
-    border-color:#daaa00;
-    color:#0b046e;
+
+button.paginacion:hover {
+    background-color: #daaa00;
+    border-color: #daaa00;
+    color: #0b046e;
 }
 
 /*=================TERMINA  VER_MAESTRO===*/
@@ -749,7 +768,7 @@ button.paginacion:hover{
 
 /*?===== ESTILOS de la PAGINA GENERAR PDF por MAESTRO=====*/
 
-.img__logo{
+.img__logo {
     background-image: url('../img/logo_csti.jpeg');
     background-color: #000;
     width: 500px;
@@ -757,84 +776,96 @@ button.paginacion:hover{
 
 }
 
-.pdf__imagen{
+.pdf__imagen {
     width: 120px;
     height: auto;
 }
 
-.p__space{
+.p__space {
     white-space: normal;
 }
 
-.line--height{
+.line--height {
     line-height: 0.5;
 }
-.line--height--const{
+
+.line--height--const {
     line-height: 1.3;
 }
 
-.mt-12{
+.mt-12 {
     margin-top: 12rem;
 }
 
-.mt-5{
+.mt-5 {
     margin-top: 5rem;
 }
-.mt-3{
+
+.mt-3 {
     margin-top: 3rem;
 }
-.mt-1{
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-1 {
     margin-top: 1rem;
 }
-.mb-3{
+
+.mb-3 {
     margin-bottom: 3rem;
 }
 
-.list--style ul{
+.list--style ul {
     list-style-type: disc;
     margin-left: 3rem;
 }
 
-div#content{
-    margin:20px;
+div#content {
+    margin: 20px;
 }
 
-.text--justify{
+.text--justify {
     text-align: justify;
 }
 
-.text--right{
+.text--right {
     text-align: right;
 }
 
-.fs--1-25{
+.fs--1-25 {
     font-size: 1.25rem;
 }
-.bt-5{
+
+.bt-5 {
     border-top: 5px solid #daaa00;
 }
 
-.flex{
+.flex {
     display: grid;
     grid-template-columns: 1fr 4fr;
     /* justify-content: space-evenly; */
 }
 
-.href{
+.href {
     color: #0000ff;
     font-weight: 500;
     text-decoration: underline;
 }
 
-.br{
+.br {
     border: 1px solid black;
 }
-.w-60{
+
+.w-60 {
     width: 60%;
 }
-.m-auto{
+
+.m-auto {
     margin: 0 auto;
 }
+
 /*========== TERMINA ESTILOS PARA GENERAR PDF POR MAESTRO*/
 
 
@@ -847,32 +878,108 @@ div#content{
 
 /* ======== ESTILOS PARA FORMULARIO DE REGISTRO DE PROFES */
 
-.column{
+.column {
     display: flex;
     flex-direction: column;
 }
 
-.row{
+.row {
     display: flex;
     flex-direction: row;
 }
 
-.center{
+.center {
     align-items: center;
 }
 
-.column input[type="text"]{
+.column input[type="text"] {
     width: 300px;
     margin: 10px;
 }
 
-.column input[type="radio"]{
+.column input[type="radio"] {
     margin-top: 2px;
     margin-right: 5px;
 }
 
-.v-center{
+.v-center {
     align-items: flex-start;
 }
 
 /* ======== TERMINA ESTILOS PARA FORMULARIO DE REGISTRO DE PROFES */
+
+.ml-3 {
+    margin-left: 3rem;
+}
+
+.mr-3 {
+    margin-right: 3rem;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.buttons {
+    cursor: pointer;
+    background-color: #1005af;
+    border: none;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding: 1rem 2rem;
+    text-align: center;
+    -webkit-transition-duration: .3s;
+    -moz-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transition-property: background-color;
+    -o-transition-property: background-color;
+    -moz-transition-property: background-color;
+    transition-property: background-color
+}
+
+.buttons:hover {
+    background-color: #0e095c;
+}
+
+.input-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0.75rem 0.5rem;
+}
+
+input[type="radio"] {
+    appearance: none;
+    background-color: #ffffff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1em;
+    height: 1em;
+    border: 0.1em solid currentColor;
+    border-radius: 90px;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 90px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #0d10c2;
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}

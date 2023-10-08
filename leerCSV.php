@@ -50,10 +50,11 @@ if (!isset($_SESSION['name'])) {
 
             <nav class="sidebar-nav">
                 <a class="nav__link" href="leerCSV.php">Leer CSV</a>
-                <a class="nav__link" href="register-teacher-info.php">Evaluar Maestros</a>
                 <a class="nav__link" href="ver-maestros.php">Ver Maestros</a>
-                <a class="nav__link" href="gen-pdf-maestro.php">Generar PDF</a>
                 <a class="nav__link" href="agregar-maestro.php">Registrar Maestro</a>
+                <a class="nav__link" href="actualizar-maestro.php">Actualizar Maestro</a>
+                <a class="nav__link" href="register-teacher-info.php">Evaluar Maestros</a>
+                <a class="nav__link" href="gen-pdf-maestro.php">Generar PDF</a>
             </nav>
 
 
@@ -75,8 +76,8 @@ if (!isset($_SESSION['name'])) {
                         <option value="asignatura">Asignatura</option>
                     </select>
                     <input type="file" name="Archivo" id="archivoCSV" accept=".csv">
-                    <button id="readFile" style="display:none">Leer archivo</button>
-                    <button id="saveData" style="display:none">Guardar</button>
+                    <button class="buttons" id="readFile" style="display:none">Leer archivo</button>
+                    <button class="buttons" id="saveData" style="display:none">Guardar</button>
                     <tr id="header-table">
                         <!-- <th>Número de Empleado</th>
                         <th>Nombre del Académico</th>
