@@ -10,11 +10,11 @@ $res = '';
 if ($conn->connect_errno) {
     $error = 1;
 } else {
-    $verification1 = "select * from tiempo_completo where num_empleado='$data[0]'";
+    $verification1 = "select * from tiempo_completo where num_empleado='$data[0]' and semestre='".$data[count($data)-1]."'";
     $result1 = mysqli_fetch_row($conn->query($verification1));
-    $verification2 = "select * from tecnico_academico where num_empleado='$data[0]'";
+    $verification2 = "select * from tecnico_academico where num_empleado='$data[0]' and semestre='".$data[count($data)-1]."'";
     $result2 = mysqli_fetch_row($conn->query($verification2));
-    $verification3 = "select * from asignatura where num_empleado='$data[0]'";
+    $verification3 = "select * from asignatura where num_empleado='$data[0]' and semestre='".$data[count($data)-1]."'";
     $result3 = mysqli_fetch_row($conn->query($verification3));
     if (!$result1) {
         if (!$result2) {
